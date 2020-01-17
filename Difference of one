@@ -1,0 +1,52 @@
+import java.io.*;
+import java.lang.Math.*;
+import java.util.Scanner;
+public class Sol {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Sol one=new Sol();
+        int t=sc.nextInt();
+        sc.nextLine();
+        for (int i=0;i<t;i++)
+        {   
+            int n=sc.nextInt();
+            int k=sc.nextInt();
+            sc.nextLine();
+            String a[]=sc.nextLine().split(" ");
+            int[] arr=new int[n];
+            for(int kk=0;kk<n;kk++)
+                arr[kk]=Integer.parseInt(a[kk]);
+            int c=0;
+            for (int j=0;j<n;j++)
+            {
+                if (arr[j]<k)
+                {
+                    if(isAd(arr[j])==true)
+                    {  System.out.print(arr[j]+" ");
+                        ++c;}
+                }
+
+            }
+            if(c==0)
+            System.out.println("-1");
+        }
+    }
+    public static boolean  isAd(int num)
+    { int diff =0;
+       String s = Integer.toString(num);
+       char[] ch=s.toCharArray();
+       int l=ch.length;
+     if (l>1)
+     {
+        for (int i=0;i<l-1;i++)
+        { if (Math.abs(ch[i]-ch[i+1])!=1)
+         
+            return false;
+        }
+     return true;}
+     else 
+         return false;
+         
+}
+}
