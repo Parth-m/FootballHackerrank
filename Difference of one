@@ -22,7 +22,7 @@ public class Sol {
             {
                 if (arr[j]<k)
                 {
-                    if(isAd(arr[j])==true)
+                    if(isAd(arr[j])==true||arr[j]==1)
                     {  System.out.print(arr[j]+" ");
                         ++c;}
                 }
@@ -30,6 +30,7 @@ public class Sol {
             }
             if(c==0)
             System.out.println("-1");
+            System.out.println();
         }
     }
     public static boolean  isAd(int num)
